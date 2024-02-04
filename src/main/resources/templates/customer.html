@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>レストラン席予約アプリ</title>
+    <link rel="stylesheet" href="tt.css">
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>レストラン席予約</h1>
+    <form id="reservationForm">
+        <label for="name">お名前：</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="resdate">予約日：</label>
+        <input type="date" id="resdate" name="resdate" required>
+
+        <label for="restime">予約時間：</label>
+        <input type="time" id="restime" name="restime" required>
+
+        <label for="guests">予約人数：</label>
+        <input type="number" id="guests" name="guests" min="1" required>
+
+        <label for="seat">席の選択:</label>
+        <select id="seat" name="seat" required>
+            <option value="" disabled selected>席を選択してください</option>
+            <option value="seat1">テーブル</option>
+            <option value="seat2">カウンター</option>
+            <option value="seat3">どちらでも</option>
+        </select>
+
+        <label for="phone">電話番号：</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10,11}" placeholder="数字のみ10桁または11桁" required>
+
+        <label for="specialRequest">特記事項：</label>
+        <textarea id="specialRequest" name="specialRequest" rows="4" cols="50"></textarea>
+
+        <input type="submit" value="予約する">
+    </form>
+</div>
+</body>
+</html>

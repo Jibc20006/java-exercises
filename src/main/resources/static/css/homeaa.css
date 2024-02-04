@@ -1,0 +1,335 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.06s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+/* .text {
+  color: #f2f2f2;
+  font-size: 30px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+} */
+
+/* Number text (  Fresh happy healthy  1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+  font-size: 70px;
+  /* font-family: 'Cormorant', serif; */
+  font-family: 'Poiret One', cursive;
+}
+
+/* The dots/bullets/indicators */
+/* .dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+} */
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* ----------- */
+body {
+    /* font-family: Arial, sans-serif; */
+    font-family: 'Zen Kurenaido', sans-serif;
+
+    background-color: #033225;
+
+     background-size: 100%;
+}
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    /* background-color: #fff; */
+    background-color: rgb(252, 246, 237);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+     /* font-family: 'Shippori Mincho B1', serif;  */
+    /* font-family: 'M PLUS Rounded 1c', sans-serif; */
+    /* font-family: 'Playfair', serif;  */
+}
+h2{
+    font-family: 'Shippori Mincho B1', serif;
+    color: #c21010;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+select[id="seat"],
+input[type="text"]
+ {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    /* background-color: #088f82; */
+    background-color: #960a0a;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+
+input[type="submit"]:hover {
+    background-color: palevioletred;
+}
+
+
+input{
+    border: 1px solid;
+}
+.hidden{
+    display: none;
+}
+.task_form{
+    padding: 0px 10px 10px 10px;
+    /* border: 1px solid #4D648D; */
+}
+.task_form form{
+    display: grid;
+    grid-template-columns: 100px 1fr;
+
+}
+.task_form input[type="date"], select {
+    width: 150px;
+}
+
+
+.tasklista table{
+
+    width: 100%;
+    border: 1px solid #d41111;
+    border-collapse: collapse;
+    text-align:center;
+    font-size: 12px;
+}
+
+
+/* sakura */
+/*
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100&display=swap');
+*/
+/*
+html {
+  width: 100%;
+  height: 100vh;
+<!--  overflow: hidden;-->
+  background: linear-gradient(#9fe4e9, #fff);
+}*/
+.sakura {
+  position: absolute;
+  padding: 0;
+  margin: -400px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ .sakura h1 {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 5rem;
+  color: #fff;
+}
+
+.sakura li{
+  position: absolute;
+  list-style: none;
+  top: -50px;
+  background: #f7d8d8;
+  border-radius: 0% 70%;
+  animation: fall 4s linear infinite, sway 2s ease-in-out infinite alternate;
+}
+
+
+@keyframes fall {
+  to {
+    top: 324%;
+  }
+}
+
+@keyframes sway1 {
+  from {
+    transform: translateX(0px) rotate(0deg);
+  }
+  to {
+    transform: translateX(200px) rotate(-45deg);
+  }
+}
+
+@keyframes sway2 {
+  from {
+    transform: translateX(200px) rotate(-45deg);
+  }
+  to {
+    transform: translateX(0px) rotate(0deg);
+  }
+}
+
+.sakura li:nth-child(1){
+  left: 0%;
+  width: 24px;
+  height: 15px;
+  animation: fall 10s linear infinite,
+             sway1 3s ease-in-out infinite alternate;
+  animation-delay: 2s;
+}
+
+.sakura li:nth-child(2){
+  left: 5%;
+  width: 13px;
+  height: 9px;
+  animation: fall 15s linear infinite,
+             sway1 2s ease-in-out infinite alternate;
+  animation-delay: 8s;
+}
+
+.sakura li:nth-child(3){
+  left: 15%;
+  width: 16px;
+  height: 10px;
+  animation: fall 9s linear infinite,
+             sway1 3.5s ease-in-out infinite alternate;
+  animation-delay: 13s;
+}
+
+.sakura li:nth-child(4){
+  left: 30%;
+  width: 16px;
+  height: 10px;
+  animation: fall 8s linear infinite,
+             sway2 4s ease-in-out infinite alternate;
+  animation-delay: 7s;
+}
+.sakura li:nth-child(5){
+  left: 40%;
+  width: 16px;
+  height: 10px;
+  animation: fall 10s linear infinite,
+             sway1 4s ease-in-out infinite alternate;
+  animation-delay: 0s;
+}
+.sakura li:nth-child(6){
+  left: 55%;
+  width: 24px;
+  height: 15px;
+  animation: fall 11s linear infinite,
+             sway2 3s ease-in-out infinite alternate;
+  animation-delay: 3s;
+}
+.sakura li:nth-child(7){
+  left: 65%;
+  width: 16px;
+  height: 10px;
+  animation: fall 7s linear infinite,
+             sway2 3.5s ease-in-out infinite alternate;
+  animation-delay: 7s;
+}
+.sakura li:nth-child(8){
+  left: 50%;
+  width: 13px;
+  height: 9px;
+  animation: fall 7s linear infinite,
+             sway1 3s ease-in-out infinite alternate;
+  animation-delay: 3s;
+}
+.sakura li:nth-child(9){
+  left: 80%;
+  width: 16px;
+  height: 10px;
+  animation: fall 10s linear infinite,
+             sway2 4s ease-in-out infinite alternate;
+  animation-delay: 4s;
+}
+.footer{
+    background-color: #033225;
+      text-align:right;
+}
+

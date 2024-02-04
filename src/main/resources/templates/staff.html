@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>予約アプリケーション</title>
+    <!-- <link rel="stylesheet" th:href="@{/tt.css}"> -->
+    <link rel="stylesheet" href="tt.css">
+
+</head>
+<body>
+
+<div class="container">
+    <h1>レストラン席予約</h1>
+    <form id="reservationForm">
+        <label for="name">お名前：</label>
+        <input type="text" id="name" name="name" required>
+
+<!--        <label for="resdate">予約日：</label>-->
+<!--&lt;!&ndash;        <input type="date" id="dateInput" value="2022-01-01">&ndash;&gt;-->
+<!--        <input type="date" id="resdate" name="resdate" required>-->
+
+<!--        <label for="restime">予約時間：</label>-->
+<!--        <input type="time" id="restime" name="restime" required>-->
+
+<!--        <label for="guests">予約人数：</label>-->
+<!--        <input type="number" id="guests" name="guests" min="1" required>-->
+
+<!--        <label for="seat">席の選択:</label>-->
+<!--        <select id="seat" name="seat" required>-->
+<!--            <option value="" disabled selected>席を選択してください</option>-->
+<!--            <option value="seat1">テーブル</option>-->
+<!--            <option value="seat2">カウンター</option>-->
+<!--        </select>-->
+
+<!--        <label for="phone">電話番号：</label>-->
+<!--        <input type="tel" id="phone" name="phone" pattern="[0-9]{10,11}" placeholder="数字のみ10桁または11桁" required>-->
+
+        <label for="specialRequest">特記事項：</label>
+        <textarea id="specialRequest" name="specialRequest" rows="4" cols="50"></textarea>
+
+        <input type="submit" value="予約する">
+    </form>
+</div>
+
+
+<h1>予約管理</h1>
+
+<div class="tasklista">
+    <h2>現在のタスクー覧</h2>
+    <table border="1" style="border-collapse: collapse;">
+        <thead>
+        <tr>
+<!--            <th class="hidden">ID</th>-->
+<!--            <th>タスク</th>-->
+<!--            <th width="150px">期限</th>-->
+<!--            <th width="100px">状態</th>-->
+
+            <th class="hidden">ID</th>
+            <th width="100px">お名前</th>
+            <th width="100px">予約日</th>
+            <th width="100px">予約時間</th>
+            <th width="40px">予約人数</th>
+            <th width="100px">席の選択</th>
+            <th width="150px">電話番号</th>
+            <th width="150px">特記事項</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="task : ${tasklista}">
+            <td class="hidden" th:text="${task.id}"></td>
+            <td th:text="${task.name}"></td>
+            <td th:text="${task.resdate}"></td>
+            <td th:text="${task.restime}"></td>
+            <td th:text="${task.guests}"></td>
+            <td th:text="${task.seat}"></td>
+            <!-- <td width="100px" th:text="${task.deadline}"></td> -->
+<!--            <td width="50px" th:text="${task.seat}? '完了':'未完了'"></td>-->
+<!--            <td width="50px" th:text="${task.seat}? 'テーブル':'カウンター'"></td>-->
+            <td th:text="${task.phone}"></td>
+            <td th:text="${task.specialRequest}"></td>
+
+<!--            <td width="50px">-->
+<!--              <button type="submit" id="update button" onclick="-->
+<!--                let row = this.parentElement.parentElement;-->
+<!--                getElementById('update_id').value=row.cells[0].firstChild.data;-->
+<!--                getElementById('update_name').value=row.cells[1].firstChild.data;-->
+<!--                getElementById('update_resdate').value=row.cells[2].firstChild.data;-->
+<!--                getElementById('update_restime').value=row.cells[3].firstChild.data;-->
+<!--                getElementById('update_guests').value=row.cells[4].firstChild.data;-->
+<!--                getElementById('update_seat').value=row.cells[5].firstChild.data;-->
+<!--                getElementById('update_phone').value=row.cells[6].firstChild.data;-->
+<!--                getElementById('update_specialRequest').value=row.cells[7].firstChild.data;-->
+
+
+<!--                var dialog = getElementById('updateDialog');-->
+<!--                dialog.style.left = ((window.innerwidth-500)/2)+'px';-->
+<!--                dialog.style.display = 'block';-->
+<!--              ">更新</button>-->
+<!--            </td>-->
+            <td width="50px">
+              <form action="/delete">
+                <button type="submit" id="delete button">削除 </button>
+                <input type="hidden" name="id" th:value="${task.id}"/>
+              </form>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>
